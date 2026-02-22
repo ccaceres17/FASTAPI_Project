@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-class User(BaseModel):
-    id: int = None
+class Perfil(BaseModel):
+    id: int | None = None
     nombre: str
     descripcion: str

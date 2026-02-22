@@ -9,3 +9,5 @@ class Client(BaseModel):
     correo: str
     telefono: str
     tipo_documento_id: int
+
+    

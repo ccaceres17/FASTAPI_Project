@@ -1,7 +1,6 @@
 from fastapi import APIRouter, HTTPException
-from controllers.perfil_controller import *
-from models.user_perfil import Perfil
-
+from app.controllers.perfil_controller import *
+from app.models.perfil_model import Perfil
 router = APIRouter()
 
 nuevo_usuario = PerfilController()

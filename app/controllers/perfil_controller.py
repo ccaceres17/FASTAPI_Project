@@ -1,12 +1,12 @@
 import psycopg2
 from fastapi import HTTPException
-from config.db_config import get_db_connection
-from models.perfil_model import perfil
+from app.config.db_config import get_db_connection
+from app.models.perfil_model import Perfil
 from fastapi.encoders import jsonable_encoder
 
 class PerfilController:
         
-    def create_perfil(self,  perfil : perfil):   
+    def create_perfil(self,  perfil : Perfil):   
         try:
             conn = get_db_connection()
             cursor = conn.cursor()

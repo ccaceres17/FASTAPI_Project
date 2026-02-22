@@ -15,25 +15,21 @@ CREATE TABLE usuarios (
 
 CREATE TABLE tipo_documento (
     id SERIAL PRIMARY KEY,
-    nombre VARCHAR(50) NOT NULL,
+    nombre VARCHAR(50),
     descripcion TEXT
 );
 
-
 CREATE TABLE cliente (
     id SERIAL PRIMARY KEY,
-    primer_nombre VARCHAR(100) NOT NULL,
-    segundo_nombre VARCHAR(100),
-    primer_apellido VARCHAR(100) NOT NULL,
-    segundo_apellido VARCHAR(100),
-    numero_documento VARCHAR(50) NOT NULL,
+    pn VARCHAR(50),
+    pa VARCHAR(50),
+    sg VARCHAR(50),
+    sa VARCHAR(50),
+    id_tipo_documento INTEGER,
+    numero_documento VARCHAR(20),
     correo VARCHAR(100),
     telefono VARCHAR(20),
-    tipo_documento_id INT NOT NULL,
-
-    CONSTRAINT fk_tipo_documento
-        FOREIGN KEY (tipo_documento_id)
-        REFERENCES tipo_documento(id)
+    FOREIGN KEY (id_tipo_documento) REFERENCES tipo_documento(id)
 );
 
 -- Pruebas
